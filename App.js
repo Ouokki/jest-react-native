@@ -75,7 +75,6 @@ const App: () => Node = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          
         </View>
       </ScrollView>
     </SafeAreaView>

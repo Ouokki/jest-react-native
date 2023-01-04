@@ -1,36 +1,15 @@
-import 'react-native-gesture-handler';
-import React from 'react';
+import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import DrawerHomeScreen from './screens/DrawerHomeScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
-const { Screen, Navigator } = createDrawerNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function Navigation() {
-
-    function HomeScreen({ navigation }) {
-        return (
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Welcome!</Text>
-            <Button
-              onPress={() => navigation.navigate('Notifications')}
-              title="Go to notifications"
-            />
-          </View>
-        );
-      }
-      
-    function NotificationsScreen({ navigation }) {
-        return (
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>This is the notifications screen</Text>
-            <Button onPress={() => navigation.goBack()} title="Go back home" />
-          </View>
-        );
-      }
   return (
-    <Navigator>
-      <Screen name="Home" component={HomeScreen} />
-      <Screen name="Notifications" component={NotificationsScreen} />
-    </Navigator>
+    <Drawer.Navigator>
+      <Drawer.Screen name="Home" component={DrawerHomeScreen} />
+      <Drawer.Screen name="Settings" component={SettingsScreen} />
+    </Drawer.Navigator>
   );
 }
-
